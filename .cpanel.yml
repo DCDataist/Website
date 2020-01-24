@@ -1,0 +1,4 @@
+deployment:
+    tasks:
+      - export DEPLOYPATH=/home/firefspe/dcdataist.com/
+      - /bin/cp -R . $DEPLOYPATH
