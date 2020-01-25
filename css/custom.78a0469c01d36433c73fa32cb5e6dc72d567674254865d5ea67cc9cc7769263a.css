@@ -1,0 +1,24 @@
+span.tools {
+    font-size: .8em;
+    font-weight: bold;
+    text-align: left;
+}
+
+p.tools {
+    font-size: .9em;
+    font-weight: normal;
+}
+
+img[src$='#floatleft']
+{
+    max-width: 30%;
+    float:left;
+    margin:1em;
+}
+
+img[src$='#floatright']
+{
+    max-width: 30%;
+    float:right;
+    margin:1em;
+}
