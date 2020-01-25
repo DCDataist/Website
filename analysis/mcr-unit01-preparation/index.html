@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><title>DCDataist - Adventures in Data Science and Informatics</title>
+    
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+
+
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open&#43;Sans" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/css/style.891fe153e0327c64a87e67923acbd0ab4fbb9165cab573dd8b4e9faf62aee9c6.css" integrity="sha256-iR/hU&#43;AyfGSofmeSOsvQq0&#43;7kWXKtXPdi06fr2Ku6cY=">
+
+<link rel="stylesheet" type="text/css" href="/css/icons.f72c0103ff9598115ab2a76351494b950570479ce3f1795fec13fc62e4185dcf.css" integrity="sha256-9ywBA/&#43;VmBFasqdjUUlLlQVwR5zj8Xlf7BP8YuQYXc8=">
+<link rel="stylesheet" type="text/css" href="/css/refresh.ef82d48cf737ddc0770af07211f85001c2de3a262912386d649440991762f70b.css" integrity="sha256-74LUjPc33cB3CvByEfhQAcLeOiYpEjhtZJRAmRdi9ws=">
+<link rel="stylesheet" type="text/css" href="/css/devicon.min.149016fbf45c8bc157d6f55ce3ee875feaa3f90446bf7d151fbc16a9f21a8859.css" integrity="sha256-FJAW&#43;/Rci8FX1vVc4&#43;6HX&#43;qj&#43;QRGv30VH7wWqfIaiFk=">
+<link rel="stylesheet" type="text/css" href="/css/syntax.cc53abf1c6137b34c6b83b46af680dc18aa9c70501922c71eaf2e249dfa6ca92.css" integrity="sha256-zFOr8cYTezTGuDtGr2gNwYqpxwUBkixx6vLiSd&#43;mypI=">
+
+  </head>
+  <body>
+     
+
+    <div id="preloader">
+      <div id="status"></div>
+    </div><nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+
+      
+      
+      
+      <a class="navbar-item">
+        <div class="menu-icon-wrapper left-menu-icon-wrapper" style="visibility: visible;">
+          <svg width="1000px" height="1000px">
+            <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+            <path class="path2" d="M 300 500 L 700 500"></path>
+            <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+          </svg>
+          <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+        </div>
+        <div class="navbar-item left-menu-icon-wrapper">
+          Index of Topics
+        </div>
+      </a>
+
+      <div class="navbar-item is-expanded"></div>
+      <a class="navbar-item is-hidden-desktop">  
+        <div data-target="navbar-menu" class="navbar-item right-menu-icon-wrapper is-hidden-desktop">
+          Menu
+        </div>
+        <div data-target="navbar-menu" class="menu-icon-wrapper right-menu-icon-wrapper" style="visibility: visible;">
+          <svg width="1000px" height="1000px">
+            <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+            <path class="path2" d="M 300 500 L 700 500"></path>
+            <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+          </svg>
+          <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+        </div>
+      </a>
+    </div>
+
+    
+
+    <div id="navbar-menu" class="navbar-menu is-static">
+      
+      <div class="navbar-end">
+        </div>
+    </div>
+
+
+
+
+  </div>
+</nav>
+<nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+      <div class="navbar-brand">
+  
+        
+        
+        
+        <a class="navbar-item">
+          <div class="menu-icon-wrapper left-menu-icon-wrapper" style="visibility: visible;">
+            <svg width="1000px" height="1000px">
+              <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+              <path class="path2" d="M 300 500 L 700 500"></path>
+              <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+            </svg>
+            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+          </div>
+          <div class="navbar-item left-menu-icon-wrapper">
+            Index of Topics
+          </div>
+        </a>
+  
+        <div class="navbar-item is-expanded"></div>
+        <a class="navbar-item is-hidden-desktop">  
+          <div data-target="cloned-navbar-menu" class="navbar-item right-menu-icon-wrapper is-hidden-desktop">
+            Menu
+          </div>
+          <div data-target="cloned-navbar-menu" class="menu-icon-wrapper right-menu-icon-wrapper" style="visibility: visible;">
+            <svg width="1000px" height="1000px">
+              <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+              <path class="path2" d="M 300 500 L 700 500"></path>
+              <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+            </svg>
+            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+          </div>
+        </a>
+      </div>
+  
+      
+  
+      <div id="cloned-navbar-menu" class="navbar-menu is-static">
+        <div class="navbar-end">
+          <a href="/analysis/" class="navbar-item is-secondary">Analyses</a></div>
+      </div>
+  
+  
+  
+  
+    </div>
+  </nav>
+<section class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title is-2 section-title">Analyzing the Medicare Cost Report Data: Preparation</h1>
+        <h5 class="subtitle is-5 is-muted"></h5>
+        <div class="divider"></div>
+        
+        <section class="section content has-text-justified">
+          <h1 id="about-the-data">About the Data</h1>
+<p>Cost report data from the U.S. Centers for Medicare and Medicaid Services (CMS) are often used for quantitative healthcare-focused research.  A significant issue with the data is that it is not released in a manner that is ready for comprehension and discovery.</p>
+<p>The downloadable public use cost report data files for hospitals go back to 1996, and are updated on a quarterly basis.  The files are available without the need for special accounts or licensing from the Healthcare Cost Report Information System (HCRIS) website.  They are delivered in zip files containing comma separated value (CSV) text files stored by year. Report content is spread across multiple files to summarize and split the information into numeric and alphanumeric data.</p>
+<p>In its shared form, the public use file data are complex and pose a significant technical barrier to using the information for analysis and research.  A spreadsheet application like Microsoft Excel is often used to open CSV files to view information in this format; however, due to Excel software constraints, many of the cost report files are too large to open as a spreadsheet.  To confront this requires specialized knowledge in databases to extract and load the information for analysis.   Additionally, multiple files are contained within the zip archive, and details are often located across different files.  Information is coded to refer to specific cells from the original submitted forms, and locating a value of interest is much like using Cartesian coordinates to refer to a specific point on a graph.</p>
+<h1 id="downloading-files">Downloading Files</h1>
+<p>There are two hospital cost report forms used to report data to CMS: CMS-2552-96, which was used until full transition to the updated CMS-2552-10 form.  The transitional years of 2010-2011 result in a set of files using the older form, as well as the newer form.  During this timeframe, both files are needed to piece together all of the information applicable to each year.  Since the two forms are different, this presents a concern when matching specific fields to a database schema.  Fields may be added, removed or changed, which can cause data quality issues that prevent dependable analysis.</p>
+<p>Data are available from 1995 to present year.  It is possible to download the entire timeframe, but for our initial prototype work, we are only going to use the last two years.</p>
+<ul>
+<li><a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Downloadable-Public-Use-Files/Cost-Reports/Cost-Reports-by-Fiscal-Year-Items/HOSPITAL10-DL-2019">2019 Public Use File</a></li>
+<li><a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Downloadable-Public-Use-Files/Cost-Reports/Cost-Reports-by-Fiscal-Year-Items/HOSPITAL10-DL-2018">2018 Public Use File</a></li>
+</ul>
+<p>Save these files to a folder called &ldquo;data&rdquo; in your script directory.</p>
+<h1 id="planning-the-approach">Planning the Approach</h1>
+<p>Our script will need to:</p>
+<ul>
+<li>Unzip the files</li>
+<li>Identify the fields</li>
+<li>Read in the data</li>
+<li>Join the different file types together</li>
+<li>Save to a friendlier format for analysis</li>
+</ul>
+<h1 id="development-needs">Development Needs</h1>
+<p><div class="columns is-marginless container">
+    <div class="column is-2 is-paddingless">
+            <a class="button is-size-5 has-background-link has-text-light refresh-site-left">
+                <span class="icon is-small">
+                    <i class="fa fa-flag"></i>
+                </span>
+            <span>Tool</span>
+            </a>
+    </div>
+    <div class="column is-paddingless">
+        <a class="button is-size-5 is-radiusless" 
+           style="width: 100%"
+           href="https://www.visualstudio.com" target="_blank">
+            <span class="container">Visual Studio Code</span>
+
+        </a>
+    </div>
+    <div class="column is-1 is-paddingless">
+        <a class="button is-size-5 collapsible refresh-site-right" data-target="tech-tool-vscode">
+            <span class="icon is-small">
+                <i class="fa fa-angle-down"></i>
+            </span>
+        </a>
+    </div>
+</div>
+<article class="hide message is-marginless is-link" id="tech-tool-vscode">
+    <div class="message-body" >
+    <p>Visual Studio Code is a free editor that supports many open source languages.</p>
+    </div>
+</article>
+
+
+<div class="columns is-marginless container">
+    <div class="column is-2 is-paddingless">
+            <a class="button is-size-5 has-background-success refresh-site-left">
+                <span class="icon is-small">
+                    <i class="fa fa-flag"></i>
+                </span>
+            <span>Language</span>
+            </a>
+    </div>
+    <div class="column is-paddingless">
+        <a class="button is-size-5 is-radiusless" 
+           style="width: 100%"
+           href="https://www.python.org/downloads/" target="_blank">
+            <span class="container">Python 3.x</span>
+
+        </a>
+    </div>
+    <div class="column is-1 is-paddingless">
+        <a class="button is-size-5 collapsible refresh-site-right" data-target="tech-lang-python">
+            <span class="icon is-small">
+                <i class="fa fa-angle-down"></i>
+            </span>
+        </a>
+    </div>
+</div>
+<article class="hide message is-marginless is-success" id="tech-lang-python">
+    <div class="message-body" >
+        <p>Python is a computer programming language.</p>
+    </div>
+</article>
+
+
+<div class="columns is-marginless container">
+    <div class="column is-2 is-paddingless">
+            <a class="button is-size-5 has-background-warning refresh-site-left">
+                <span class="icon is-small">
+                    <i class="fa fa-flag"></i>
+                </span>
+            <span>Library</span>
+            </a>
+    </div>
+    <div class="column is-paddingless">
+        <a class="button is-size-5 is-radiusless" 
+           style="width: 100%"
+           href="https://numpy.org/" target="_blank">
+            <span class="container">NumPy</span>
+
+        </a>
+    </div>
+    <div class="column is-1 is-paddingless">
+        <a class="button is-size-5 collapsible refresh-site-right" data-target="tech-lib-dask">
+            <span class="icon is-small">
+                <i class="fa fa-angle-down"></i>
+            </span>
+        </a>
+    </div>
+</div>
+<article class="hide message is-marginless is-warning" id="tech-lib-dask">
+    <div class="message-body" >
+        <p>NumPy is the fundamental package for scientific computing with Python.  Basically, it does math.</p>
+    </div>
+</article>
+
+
+<div class="columns is-marginless container">
+    <div class="column is-2 is-paddingless">
+            <a class="button is-size-5 has-background-warning refresh-site-left">
+                <span class="icon is-small">
+                    <i class="fa fa-flag"></i>
+                </span>
+            <span>Library</span>
+            </a>
+    </div>
+    <div class="column is-paddingless">
+        <a class="button is-size-5 is-radiusless" 
+           style="width: 100%"
+           href="https://docs.dask.org/en/latest/install.html" target="_blank">
+            <span class="container">Dask</span>
+
+        </a>
+    </div>
+    <div class="column is-1 is-paddingless">
+        <a class="button is-size-5 collapsible refresh-site-right" data-target="tech-lib-dask">
+            <span class="icon is-small">
+                <i class="fa fa-angle-down"></i>
+            </span>
+        </a>
+    </div>
+</div>
+<article class="hide message is-marginless is-warning" id="tech-lib-dask">
+    <div class="message-body" >
+        <p>Dask is a flexible library for parallel computing in Python.</p>
+    </div>
+</article>
+
+</p>
+<p>As we develop with VS Code, we will use the interactive Python features to help build a full script.  This allows running a small chunk of code at a time using the &ldquo;Run Cell&rdquo; feature that appears at any location where the <code>%##</code> text is found.</p>
+<h1 id="time-to-code">Time to Code!</h1>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>First, we need to import the libraries that are required.</p>
+        
+    </div>
+  </article>
+<p>The <code>os</code> library will allow obtaining a list of files from the input directory.  The <code>zipfile</code> library will allow Python to open the zip files and extract the NMRC, ALPHA and RPT files from the archives.  The <code>dask</code> library is the tool that will allow importing the csv file into Python, and performing actions on the records. The <code>numpy</code> library will help assign data types to certain fields so that numeric values will maintain the intended format.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Import Libraries</span>
+</span><span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> zipfile
+<span style="color:#f92672">import</span> dask.dataframe <span style="color:#66d9ef">as</span> dd
+<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np</code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>2.) Create directories, and set the values.</p>
+        
+    </div>
+  </article>
+<p>The code below expects a folder <code>data</code> that has the zipped files in it.  It also will expect an <code>output</code> folder as the destination for the prepared data files to be used by an analysis script.  Please make sure these folders exist in the location you are building the script.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Set Paths</span>
+</span>input_folder <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">data/</span><span style="color:#e6db74">&#34;</span>
+output_folder <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">output/</span><span style="color:#e6db74">&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>3.) Loop through each zip file in the output directory, and extract the csv files.</p>
+        
+    </div>
+  </article>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Unzip Archives</span>
+</span><span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(input_folder):
+    <span style="color:#66d9ef">with</span> zipfile<span style="color:#f92672">.</span>ZipFile(input_folder<span style="color:#f92672">+</span>file,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;</span>) <span style="color:#66d9ef">as</span> zipped:
+        zipped<span style="color:#f92672">.</span>extractall(input_folder)</code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>4.) Set up the field names expected from each type of csv file.</p>
+        
+    </div>
+  </article>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Setup Columns</span>
+</span>colRPT <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">RPT_REC_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">PRVDR_CTRL_TYPE_CD</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">PRVDR_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">NPI</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">RPT_STUS_CD</span><span style="color:#e6db74">&#39;</span>, \
+            <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">FY_BGN_DT</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">FY_END_DT</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">PROC_DT</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">INITL_RPT_SW</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LAST_RPT_SW</span><span style="color:#e6db74">&#39;</span>, \
+            <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">TRNSMTL_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">FI_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ADR_VNDR_CD</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">FI_CREAT_DT</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">UTIL_CD</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">NPR_DT</span><span style="color:#e6db74">&#39;</span>, \
+            <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">SPEC_IND</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">FI_RCPT_DT</span><span style="color:#e6db74">&#39;</span>]
+colNMRC <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">RPT_REC_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">WKSHT_CD</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LINE_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLMN_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ITM_VAL</span><span style="color:#e6db74">&#39;</span>]
+colALPHA <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">RPT_REC_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">WKSHT_CD</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LINE_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLMN_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ITM_VAL</span><span style="color:#e6db74">&#39;</span>]</code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>5.) Read each type of csv file into a dataframe.</p>
+        
+    </div>
+  </article>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Read data into Dask dataframe (201X Files)</span>
+</span>dfRPT <span style="color:#f92672">=</span> dd<span style="color:#f92672">.</span>read_csv(input_folder <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">*_201*_RPT.CSV</span><span style="color:#e6db74">&#39;</span>, header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, names<span style="color:#f92672">=</span>colRPT,dtype<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">str</span><span style="color:#e6db74">&#39;</span>)
+dfNMRC <span style="color:#f92672">=</span> dd<span style="color:#f92672">.</span>read_csv(input_folder <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">*_201*_NMRC.CSV</span><span style="color:#e6db74">&#39;</span>, header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, names<span style="color:#f92672">=</span>colNMRC,dtype<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">str</span><span style="color:#e6db74">&#39;</span>)
+dfALPHA <span style="color:#f92672">=</span> dd<span style="color:#f92672">.</span>read_csv(input_folder <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">*_201*_ALPHA.CSV</span><span style="color:#e6db74">&#39;</span>, header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, names<span style="color:#f92672">=</span>colALPHA,dtype<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">str</span><span style="color:#e6db74">&#39;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>6.) Gather the metadata that will help identify fields in the HCRIS data.</p>
+        
+    </div>
+  </article>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Load field descriptors</span>
+</span>dfFIELDS <span style="color:#f92672">=</span> dd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://raw.githubusercontent.com/ohana-project/HCRISFields/master/fields.csv</span><span style="color:#e6db74">&#39;</span>, \
+                dtype<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">str</span><span style="color:#e6db74">&#39;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>7.) Force important numeric data to a string data type.</p>
+        
+    </div>
+  </article>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Match field data types</span>
+</span>dtypes <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">WKSHT_CD</span><span style="color:#e6db74">&#39;</span>:np<span style="color:#f92672">.</span>str,
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LINE_NUM</span><span style="color:#e6db74">&#39;</span>:np<span style="color:#f92672">.</span>str,
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLMN_NUM</span><span style="color:#e6db74">&#39;</span>:np<span style="color:#f92672">.</span>str
+}
+dfNMRC <span style="color:#f92672">=</span> dfNMRC<span style="color:#f92672">.</span>astype(dtypes)
+dfALPHA <span style="color:#f92672">=</span> dfALPHA<span style="color:#f92672">.</span>astype(dtypes)
+dfFIELDS <span style="color:#f92672">=</span> dfFIELDS<span style="color:#f92672">.</span>astype(dtypes)</code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>8.) Join the numeric data to the field metadata.  Do the same for alphanumeric dataframe.</p>
+        
+    </div>
+  </article>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Merge Field Information with Numeric Data</span>
+</span>dfNMRC <span style="color:#f92672">=</span> dfNMRC<span style="color:#f92672">.</span>merge(dfFIELDS, left_on<span style="color:#f92672">=</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">WKSHT_CD</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LINE_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLMN_NUM</span><span style="color:#e6db74">&#39;</span>], \
+    right_on<span style="color:#f92672">=</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">WKSHT_CD</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LINE_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLMN_NUM</span><span style="color:#e6db74">&#39;</span>])
+
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Merge Field Information with Alpha Data</span>
+</span>dfALPHA <span style="color:#f92672">=</span> dfALPHA<span style="color:#f92672">.</span>merge(dfFIELDS, left_on<span style="color:#f92672">=</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">WKSHT_CD</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LINE_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLMN_NUM</span><span style="color:#e6db74">&#39;</span>], \
+    right_on<span style="color:#f92672">=</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">WKSHT_CD</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LINE_NUM</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">CLMN_NUM</span><span style="color:#e6db74">&#39;</span>])</code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>9.) Join the report metadata to the numeric and alphanumeric dataframes.</p>
+        
+    </div>
+  </article>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Merge Alpha and Numeric</span>
+</span>dfNMRC <span style="color:#f92672">=</span> dfNMRC<span style="color:#f92672">.</span>merge(dfRPT, left_on<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">RPT_REC_NUM</span><span style="color:#e6db74">&#39;</span>, right_on<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">RPT_REC_NUM</span><span style="color:#e6db74">&#39;</span>)
+dfALPHA <span style="color:#f92672">=</span> dfALPHA<span style="color:#f92672">.</span>merge(dfRPT, left_on<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">RPT_REC_NUM</span><span style="color:#e6db74">&#39;</span>, right_on<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">RPT_REC_NUM</span><span style="color:#e6db74">&#39;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>10.) Merge the numeric and alphanumeric dataframes into one.</p>
+        
+    </div>
+  </article>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Combine to Final Dataframe</span>
+</span>dfFINAL <span style="color:#f92672">=</span> dfALPHA<span style="color:#f92672">.</span>append(dfNMRC)</code></pre></td></tr></table>
+</div>
+</div>
+<article class="message">
+    <div class="message-body">
+        
+        
+            <p>11.) Export the merged data for easier access by analysis scripts.</p>
+        
+    </div>
+  </article>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">#%% Exporting to Parquet</span>
+</span>dfFINAL<span style="color:#f92672">.</span>to_parquet(output_folder<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">mcr</span><span style="color:#e6db74">&#34;</span>, compression<span style="color:#f92672">=</span>{<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name</span><span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">gzip</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">values</span><span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">snappy</span><span style="color:#e6db74">&#34;</span>})</code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="source-code">Source Code</h1>
+<ul>
+<li><a href="https://github.com/DCDataist/HCRIS-Preparation">Github Project for this article</a></li>
+<li><a href="https://raw.githubusercontent.com/DCDataist/HCRIS-Preparation/master/preparation.py">Direct link to finished script</a></li>
+</ul>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Downloadable-Public-Use-Files/Cost-Reports">Centers for Medicare &amp; Medicaid Services Cost Reports</a></li>
+</ul>
+
+        </section>
+      </div>
+    </div>
+  </div>  
+  </section>
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        
+        <a href="/"><img src="/footer.svg" alt="">
+        
+        </a>
+      </div>
+      
+    <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+          </div>
+          <ul class="link-list">
+            <li><a href="/tags/"><span class="icon"><i class="fa fa-tag"></i></span> 
+                All Topics
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+      
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+          </div>
+          <ul class="link-list">
+            
+            <li>
+              <a href="https://www.linkedin.com/in/dcdataist" target="_blank">
+                <span class="icon"><i class="fa fa-linkedin"></i></span>
+                
+                  My LinkedIn
+                
+              </a>
+            </li>
+            
+            
+            <li>
+              <a href="https://github.com/DCDataist" target="_blank">
+                <span class="icon"><i class="fa fa-github"></i></span>
+                
+                  Github
+                
+              </a>
+            </li>
+                         
+            
+            <li>
+              <a href="mailto:dc@dcdataist.com" target="_blank">
+                <span class="icon"><i class="fa fa-envelope"></i></span>
+                
+                  My Email
+                
+              </a>
+            </li>
+            
+                   
+            
+            <li>
+              <a href="https://twitter.com/DCDataist" target="_blank">
+                <span class="icon"><i class="fa fa-twitter"></i></span>
+                
+                  Twitter
+                
+              </a>
+            </li>
+                   
+                   
+          </ul>
+        </div>
+      </div>
+      
+
+      
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+          </div>
+          <ul class="link-list">
+            <li>
+              <a>
+                <span class="icon"><i class="fa fa-copyright"></i></span>
+                DC Compton 2020
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</footer>
+    <div id="backtotop"><a href="#"></a></div><div class="sidebar">
+  <div class="sidebar-header"><img src="/sidebar.svg" alt="">
+    
+    <a href="/" style="color:#fff">Home</a>
+    <a class="sidebar-close" href="javascript:void(0);">
+      <i data-feather="x"></i>
+    </a>
+  </div>
+  <div class="inner">
+    <ul class="sidebar-menu">
+      <li class="no-children"><a href="/tags/"><div class="columns">
+              <table width="100%">  
+                <tr>
+                  <td class="">
+                    <span class="icon"><i class="fa fa-cubes"></i></span>
+                    All Topics
+                  </td>
+                  <td class="has-text-right" >
+                      
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </a>
+      <li class="no-children">
+          <a href="/tags/dask">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Dask</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/medicare">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Medicare</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/python">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Python</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li></ul>
+  </div>
+</div>
+<script src="/js/jquery-2.2.4.893e90f6230962e42231635df650f20544ad22affc3ee396df768eaa6bc5a6a2.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="></script>
+<script src="/js/feather.4.22.0.1ab07abeb9975f283f6b5f29451981be680fbf77ea778f991d457511d210476a.js" integrity="sha256-GrB6vrmXXyg/a18pRRmBvmgPv3fqd4&#43;ZHUV1EdIQR2o="></script>
+<script src="/js/modernizr-2.8.3.7dfc3ef73c1284c7aff3c5cdac3812d212c8b899037d7860c8ba20a1defb9a7f.js" integrity="sha256-ffw&#43;9zwShMev88XNrDgS0hLIuJkDfXhgyLogod77mn8="></script>
+<script src="/js/refresh.44d8ed294d4f02a04f63b0cf8d5a762be9f9302b96830c93af32d51c6f551983.js" integrity="sha256-RNjtKU1PAqBPY7DPjVp2K&#43;n5MCuWgwyTrzLVHG9VGYM="></script>
+
+<script>
+  window.MathJax = {
+    loader: {
+      load: ['core', 'input/tex-base', 'output/chtml'],  
+      source: {
+        'core': '\/js\/mathjax\/core.d48fedf25c74c54fa6bf79646de92b02155872bdc4f5f7d0bbfc662523d8b4f5.js',
+        'input/tex-base': '\/js\/mathjax\/tex-base.1b68b8741dfc54e8f7222f88bea8ffcfc57ac54b2a2d8f4edf6800aa44d49441.js',
+        'output/chtml': '\/js\/mathjax\/chtml.926cd166e0f8c1f8a566a718d60c9c58a2b7142b156d30d5f02cec7c3b0ad60a.js',
+        'output/chtml/fonts/tex': '\/js\/mathjax\/tex_out.b8b2bb939c0dae84bf1390bfe6d32af13e83f647cdac01d544d2a7a517477e9d.js'
+      },
+    },
+    chtml: {
+      fontURL: '/fonts' 
+    },
+  };
+</script>
+<script src="/js/mathjax/startup.234a2513e6bdbc1eee06ca19abceca30fe4034e82afb373c08274c1ba2feb1a6.js" integrity="sha256-I0olE&#43;a9vB7uBsoZq87KMP5ANOgq&#43;zc8CCdMG6L&#43;saY="></script>
+
+</body>
+</html>
