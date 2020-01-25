@@ -1,0 +1,10 @@
+span.tools {
+    font-size: .8em;
+    font-weight: bold;
+    text-align: left;
+}
+
+p.tools {
+    font-size: .9em;
+    font-weight: normal;
+}
