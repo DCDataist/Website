@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/css/refresh.ef82d48cf737ddc0770af07211f85001c2de3a262912386d649440991762f70b.css" integrity="sha256-74LUjPc33cB3CvByEfhQAcLeOiYpEjhtZJRAmRdi9ws=">
 <link rel="stylesheet" type="text/css" href="/css/devicon.min.149016fbf45c8bc157d6f55ce3ee875feaa3f90446bf7d151fbc16a9f21a8859.css" integrity="sha256-FJAW&#43;/Rci8FX1vVc4&#43;6HX&#43;qj&#43;QRGv30VH7wWqfIaiFk=">
 <link rel="stylesheet" type="text/css" href="/css/syntax.cc53abf1c6137b34c6b83b46af680dc18aa9c70501922c71eaf2e249dfa6ca92.css" integrity="sha256-zFOr8cYTezTGuDtGr2gNwYqpxwUBkixx6vLiSd&#43;mypI=">
-<link rel="stylesheet" type="text/css" href="/css/custom.78a0469c01d36433c73fa32cb5e6dc72d567674254865d5ea67cc9cc7769263a.css" integrity="sha256-eKBGnAHTZDPHP6MstebcctVnZ0JUhl1epnzJzHdpJjo=">
+<link rel="stylesheet" type="text/css" href="/css/custom.35eef6678c186e5350c480e9dcb8e24bb9eceaa1e7921482f7d71baa744a164f.css" integrity="sha256-Ne72Z4wYblNQxIDp3LjiS7ns6qHnkhSC99cbqnRKFk8=">
 
 
 
@@ -65,7 +65,6 @@
     
 
     <div id="navbar-menu" class="navbar-menu is-static">
-      
       <div class="navbar-end">
         </div>
     </div>
@@ -136,7 +135,7 @@
           <h1 id="about-the-data">About the Data</h1>
 <p><a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Downloadable-Public-Use-Files/Cost-Reports">Cost report data</a> from the U.S. Centers for Medicare and Medicaid Services (CMS) are often used for healthcare research.  A significant issue with the data is that it is not released in a manner that is ready for comprehension and discovery.  Through this series of articles, I hope to help others with that journey.  These data provide valuable insight into the U.S. healthcare system, and CMS has broad influence on the brhavior and practices of hospitals and clinicians providing care.</p>
 <p><img src="/analysis/media/mcr.png#floatright" alt="RPT, ALPHA, NMRC and ROLLUP are the four major table types." title="MCR Table Types"></p>
-<p>In its shared form, the public use file data take a lot of work to use for analysis and research, particularly if you are trying to piece together a broad view of data across the report.  You can&rsquo;t use Microsoft Excel with these files because they are too big, and if you can only open one at a time, good luck understanding all of the values, and matching them to specific hospitals!</p>
+<p>In its shared form, the public use file data take a lot of work to use for analysis and research, particularly if you are trying to piece together a broad view of data across the report.  You can't use Microsoft Excel with these files because they are too big, and if you can only open one at a time, good luck understanding all of the values, and matching them to specific hospitals!</p>
 <p>Within the archives you may encounter up to four different types of csv file. For this article, we will work with three of them: ALPHA, NMRC and RPT. ALPHA contains all entries into the cost report forms that are alphanumeric, while NMRC contains only the numeric values from the forms.  The RPT file contains information about the report such as the provider and submission dates.  The RPT data is identified by a unique report record number which is used to link to all of the individual values in the ALPHA and NMRC files.</p>
 <h1 id="downloading-files">Downloading Files</h1>
 <p>The downloadable public use files (PUFs) for hospitals go back to 1996, and are updated on a quarterly basis.  The files are available without the need for special accounts or licensing from the Healthcare Cost Report Information System (HCRIS) website.  They are delivered in zip files containing comma separated value (CSV) text files stored by year. Within each archive you will find the three kinds of files we are looking for.</p>
@@ -149,12 +148,16 @@
 </ul>
 <p>Save these files to a folder called &ldquo;data&rdquo; in your script directory.</p>
 <h1 id="planning-the-approach">Planning the Approach</h1>
-<p>Before trying to implement a solution, particularly if you are inclined to first start writing code, I recommend pausing and writing the general steps that you need to try to accomplish with your solution.  As we go through the general steps, our code should be solving the problems or needs that we&rsquo;ve identified.  Focus on one problem at a time!</p>
+<p>Before trying to implement a solution, particularly if you are inclined to first start writing code, I recommend pausing and writing the general steps that you need to try to accomplish with your solution.  As we go through the general steps, our code should be solving the problems or needs that we've identified.  Focus on one problem at a time!</p>
+<h2 id="rough-sketch">Rough Sketch</h2>
+<p><img src="/analysis/media/mcr-unit01-preparation-approach.jpeg" alt="My sketch of a solution." title="Approaching the HCRIS Data"></p>
+<h2 id="capturing-the-steps">Capturing the Steps</h2>
+<p>For this approach, we are going to take care of getting the files for the script.  The next version of our script might take care of the download part.</p>
 <p>Our script will need to:</p>
 <ul>
 <li>Unzip the files</li>
-<li>Identify the fields</li>
 <li>Read in the data</li>
+<li>Identify the fields using the metadata file</li>
 <li>Join the different file types together</li>
 <li>Save to a friendlier format for analysis</li>
 </ul>
@@ -386,7 +389,7 @@ output_folder <span style="color:#f92672">=</span> <span style="color:#e6db74"><
         
     </div>
   </article>
-<p>This step doesn&rsquo;t require a lot of explanation.  The code grabs the list of files from the input directory, and then unzips them.  It is worth noting that if you intend to make this a more repeatable script, you might check to make sure each file is a zip archive before attempting to extract files.  For now, make sure that you only have zip files in the directory when you run the script.</p>
+<p>This step doesn't require a lot of explanation.  The code grabs the list of files from the input directory, and then unzips them.  It is worth noting that if you intend to make this a more repeatable script, you might check to make sure each file is a zip archive before attempting to extract files.  For now, make sure that you only have zip files in the directory when you run the script.</p>
 <p>Lastly, you could have many years in this directory, and the script would handle them.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -410,7 +413,7 @@ output_folder <span style="color:#f92672">=</span> <span style="color:#e6db74"><
         
     </div>
   </article>
-<p>This is where you specify the field names used when importing the CSV data.  I used the standard ones that I&rsquo;ve used in the past, but you could make these more user friendly.  Just be aware that you will need to make the same adjustments to field names below, particularly on the identifier (&ldquo;key&rdquo;) fields.</p>
+<p>This is where you specify the field names used when importing the CSV data.  I used the standard ones that I've used in the past, but you could make these more user friendly.  Just be aware that you will need to make the same adjustments to field names below, particularly on the identifier (&ldquo;key&rdquo;) fields.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -463,7 +466,7 @@ dfALPHA <span style="color:#f92672">=</span> dd<span style="color:#f92672">.</sp
         
     </div>
   </article>
-<p>I have prepared a field list that contains metadata on the cost report fields.  This is shared through the <a href="https://ohanaproject.org">OHANA Project</a>, and updates are welcome.  One of the significant burdens of the cost report data is having a reliable way to identify all of the fields, and crosswalk fields from the 1996 version of the form to the 2010.  It&rsquo;s not perfect, but is better that where I started a few years ago.</p>
+<p>I have prepared a field list that contains metadata on the cost report fields.  This is shared through the <a href="https://ohanaproject.org">OHANA Project</a>, and updates are welcome.  One of the significant burdens of the cost report data is having a reliable way to identify all of the fields, and crosswalk fields from the 1996 version of the form to the 2010.  It's not perfect, but is better that where I started a few years ago.</p>
 <p>In future articles I will discuss approaches to working with data from the older version of the form.  To start, I recommend starting with 2012, and you will only have data from the CMS-2552-10 form.  Remember, 2010 and 2011 were transition years where both forms were accepted.  This means your results may be skewed for those years since some data are reported using the older format.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -485,7 +488,7 @@ dfALPHA <span style="color:#f92672">=</span> dd<span style="color:#f92672">.</sp
         
     </div>
   </article>
-<p>When using dataframes, you need to be aware that sometimes your data will be altered.  It may or may not be important to you, but if you have numeric strings with leading zeros, those fields will likely get converted to an integer type. This means that those zeros will disappear.  For actual numbers, this isn&rsquo;t a concern.</p>
+<p>When using dataframes, you need to be aware that sometimes your data will be altered.  It may or may not be important to you, but if you have numeric strings with leading zeros, those fields will likely get converted to an integer type. This means that those zeros will disappear.  For actual numbers, this isn't a concern.</p>
 <p>In our case, the leading zeros are important, so you will want to force these key fields to a string type to preserve the format.  For example, LINE_NUM will appear as a six character string (<code>00100</code>) and the zeros are VERY important.  In this case, <code>00100</code> refers to line <code>1</code> of the form, but when converted to an integer this would instead refer to line <code>100</code>!</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -548,7 +551,7 @@ dfFIELDS <span style="color:#f92672">=</span> dfFIELDS<span style="color:#f92672
         
     </div>
   </article>
-<p>The <code>RPT</code> table contains the overall form information, so we will join this to each set of values. This essentially creates a denormalized record that supplies the form information and field metadata for each value.  While it is true that this isn&rsquo;t how we would typically store information in a database, this format makes it FAR easier to query for analysis using a simple script.</p>
+<p>The <code>RPT</code> table contains the overall form information, so we will join this to each set of values. This essentially creates a denormalized record that supplies the form information and field metadata for each value.  While it is true that this isn't how we would typically store information in a database, this format makes it FAR easier to query for analysis using a simple script.</p>
 <p>This will let you concentrate on the analysis rather than the relationships, performance and linking of data in your script.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -590,7 +593,7 @@ dfALPHA <span style="color:#f92672">=</span> dfALPHA<span style="color:#f92672">
     </div>
   </article>
 <p>Lastly, we export the results to compressed parquet files, and in the next article, we will read in these files and start analyzing.  If you save these files, you can reuse them without going through all of the preparation steps.</p>
-<p>When the new yearly files are released, you will need to rebuild the files.  There are techniques to be able to merge updates so you don&rsquo;t have to start from scratch, but that is a more advanced task so we can explore that in a later article.</p>
+<p>When the new yearly files are released, you will need to rebuild the files.  There are techniques to be able to merge updates so you don't have to start from scratch, but that is a more advanced task so we can explore that in a later article.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -604,6 +607,8 @@ dfALPHA <span style="color:#f92672">=</span> dfALPHA<span style="color:#f92672">
 <h1 id="review">Review</h1>
 <p>While I encourage you to build the script as you go through the article, the full, finished script is linked below.  There is a lot you could do to make this script more robust, and that is an opportunity for you to develop your coding skills.  For example, the pieces are here to be able to download the 2018 and 2019 zip files directly from the CMS website.</p>
 <p>You do need to be aware that repeatedly downloading from any site is not really being a good neighbor on the internet.  If you do set up an automatic download, make sure to check to see if your file already exists in the directly before attempting the download.  This way you only download what is missing, and you save some time, bandwidth and money in the process.</p>
+<h1 id="next-steps">Next Steps</h1>
+<p>In the next article we will start exploring, cleaning and performing some initial analysis.  We will check for problems with the data, generate summaries of the data, and see if there are some initial areas of interest for deeper analysis.  Follow me on Twitter for updates!</p>
 <h1 id="source-code">Source Code</h1>
 <ul>
 <li><a href="https://github.com/DCDataist/HCRIS-Preparation">Github project for this article.</a></li>
@@ -612,6 +617,7 @@ dfALPHA <span style="color:#f92672">=</span> dfALPHA<span style="color:#f92672">
 <h1 id="references">References</h1>
 <ul>
 <li><a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Downloadable-Public-Use-Files/Cost-Reports">Centers for Medicare &amp; Medicaid Services Cost Reports</a></li>
+<li><a href="https://github.com/ohana-project/HCRISFields">Open Health Analytics Project, HCRIS Field Metadata</a></li>
 </ul>
 
         </section>
@@ -718,14 +724,16 @@ dfALPHA <span style="color:#f92672">=</span> dfALPHA<span style="color:#f92672">
     <div id="backtotop"><a href="#"></a></div><div class="sidebar">
   <div class="sidebar-header"><img src="/sidebar.svg" alt="">
     
-    <a href="/" style="color:#fff">Home</a>
     <a class="sidebar-close" href="javascript:void(0);">
       <i data-feather="x"></i>
     </a>
   </div>
   <div class="inner">
     <ul class="sidebar-menu">
-      <li class="no-children"><a href="/tags/"><div class="columns">
+      <li class="no-children">
+
+        <a href="/">Home</a>
+        <a href="https://github.com/DCDataist/Notes">My Notepad</a><a href="/tags/"><div class="columns">
               <table width="100%">  
                 <tr>
                   <td class="">
